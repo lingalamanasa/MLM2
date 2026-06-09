@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly MLM — Welcome</title>
+    <meta name="description" content="Welcome to Stackly MLM. Advanced multi-level marketing platform for managing your network, tasks, and growth.">
+    <link rel="stylesheet" href="splash.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ================= ANIMATED BACKGROUND ================= -->
+<div class="bg-animation">
+    <div class="orb"></div>
+    <div class="orb"></div>
+    <div class="orb"></div>
+    <div class="orb"></div>
+    <div class="orb"></div>
+</div>
+
+<!-- Floating MLM icons -->
+<div class="floating-icons">
+    <div class="float-icon"><i class="fa-solid fa-network-wired"></i></div>
+    <div class="float-icon"><i class="fa-solid fa-users"></i></div>
+    <div class="float-icon"><i class="fa-solid fa-chart-line"></i></div>
+    <div class="float-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+    <div class="float-icon"><i class="fa-solid fa-ranking-star"></i></div>
+    <div class="float-icon"><i class="fa-solid fa-people-group"></i></div>
+    <div class="float-icon"><i class="fa-solid fa-coins"></i></div>
+    <div class="float-icon"><i class="fa-solid fa-diagram-project"></i></div>
+    <div class="float-icon"><i class="fa-solid fa-trophy"></i></div>
+    <div class="float-icon"><i class="fa-solid fa-gem"></i></div>
+</div>
+
+<!-- Particle generator -->
+<div class="particles" id="particles"></div>
+
+<!-- ================= SPLASH CONTENT ================= -->
+<div class="splash-container">
+    <div class="logo-wrapper" id="logoWrapper">
+        <div class="logo-ring"></div>
+        <div class="logo-ring ring-2"></div>
+        <div class="logo-ring ring-3"></div>
+        <div class="logo-icon">
+            <i class="fa-solid fa-diagram-project"></i>
+        </div>
+    </div>
+    <h1 class="brand-title">Stackly <span class="gradient-text">MLM</span></h1>
+    <p class="brand-subtitle">Build Your Network. Grow Your Empire.</p>
+    <p class="click-hint">
+        <span class="pulse-dot"></span>
+        Click the logo to enter
+    </p>
+</div>
+
+<!-- ================= LOADING OVERLAY ================= -->
+<div class="loading-overlay" id="loadingOverlay">
+    <div class="loader-content">
+        <div class="loader-spinner"></div>
+        <p>Initializing Platform...</p>
+    </div>
+</div>
+
+<script>
+    // Generate particles
+    const particlesContainer = document.getElementById('particles');
+    for (let i = 0; i < 50; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 8 + 's';
+        particle.style.animationDuration = (Math.random() * 6 + 6) + 's';
+        particle.style.width = particle.style.height = (Math.random() * 4 + 1) + 'px';
+        particlesContainer.appendChild(particle);
+    }
+
+    // Logo click handler
+    document.getElementById('logoWrapper').addEventListener('click', () => {
+        const overlay = document.getElementById('loadingOverlay');
+        overlay.classList.add('active');
+        setTimeout(() => {
+            window.location.href = 'login.html';
+        }, 1500);
+    });
+</script>
+</body>
+</html>
